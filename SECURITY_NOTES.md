@@ -1,10 +1,10 @@
 # Security Notes
 
 ## Purpose
-This repository is prepared for **technical review and interview showcase**.
-Sensitive credentials and user-private artifacts are intentionally excluded.
-Security controls described below reflect the system’s backend implementation
-approach and design decisions.
+This repository documents the security-related design considerations and implementation practices applied within the system.
+
+Sensitive credentials and user-private files are intentionally excluded.
+The security controls described below reflect the backend implementation approach and system design decisions.
 
 ---
 
@@ -12,7 +12,7 @@ approach and design decisions.
 
 ### Session Initialization & Access Control
 - User session initialization is centralized and enforced at the page entry level.
-- Protected user-facing pages include a shared header file that:
+- Protected user-side pages include a shared header file that:
   - loads system configuration
   - initializes the PHP session if not already started
   - retrieves authenticated user context from session storage
@@ -36,11 +36,10 @@ $_user = $_SESSION['user'] ?? null;
 
 ---
 
-## 2. Authorization & Role-Based Access Control (RBAC)
+## 2. Authorization & Role-Based Access Control
 - The system enforces separation of permissions between **Admin** and **User** roles.
 - Admin-only modules are placed under `admin/` and require authorization checks.
-- Access control is validated server-side to prevent URL tampering or direct access
-  to restricted pages.
+- Access control is validated server-side to prevent URL tampering or direct access to restricted pages.
 
 ---
 
@@ -63,19 +62,25 @@ $_user = $_SESSION['user'] ?? null;
 
 ---
 
-## 5. Sensitive Data Handling (Repository Hygiene)
+## 5. Sensitive Data Handling (Repository Management)
 
 ### Excluded from Public Repository
 The following are intentionally excluded from this public repository:
-- Database credentials and secrets
+- Database credentials
 - API keys / tokens
-- `.env` files and local overrides
 - User-submitted sensitive documents (e.g., refund proof)
 
 ### Demo Media Policy
-- `uploads/` contains **limited demo media only** for UI showcase.
+- `uploads/` contains **limited demo media only** for system demonstration.
 - Sensitive content folders are removed.
 - A `README.md` is used within media folders to clarify intended usage.
+
+## External Communication Services
+Email and SMS services are integrated using third-party providers.
+- SMTP and SMS credentials are not committed to the repository
+- Secrets are managed outside of version control
+- Communication endpoints are protected against misuse through validation
+  and request control mechanisms
 
 ---
 
@@ -84,26 +89,15 @@ The following are intentionally excluded from this public repository:
   - file type / extension checks
   - size limits
   - controlled storage paths
-- User-uploaded private artifacts are not included in this repository.
+- User-uploaded private files are not included in this repository.
 
 ---
 
 ## 7. AI/ML Module Security Considerations
 For the Visual Search module (Python-based):
-- AI processing is treated as a separate component to reduce coupling.
-- Only required scripts and demo assets are included for showcase.
-- Large datasets, model weights, and generated indexes may be excluded to prevent
-  oversized repositories and accidental data exposure.
-
----
-
-## 8. Operational Notes (Interview Context)
-This repository represents a **functional prototype** and a **showcase build**.
-In a production setting, additional controls would typically be implemented, such as:
-- Environment-based secret management
-- Centralized logging with access control
-- Rate limiting for sensitive endpoints
-- Stronger file upload scanning and content policies
+- AI processing is treated as a separate component to reduce inter-module dependencies.
+- Only required scripts and demo assets are included.
+- Large datasets, model weights, and generated indexes may be excluded to prevent oversized repositories and accidental data exposure.
 
 ---
 
@@ -113,7 +107,7 @@ Security in this project is implemented through:
 - role-based access control
 - server-side validation
 - PDO prepared statements
-- repository-level protection of secrets and private artifacts
+- repository-level protection of secrets and private files
 
-These controls collectively reduce common web security risks and support safe
-system operation in an e-commerce context.
+These controls collectively reduce common web security risks and support safe system operation in an e-commerce context.
+
