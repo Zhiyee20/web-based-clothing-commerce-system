@@ -10,7 +10,7 @@ The system adopts a hybrid architecture where **PHP** is used for core business 
 ---
 
 ## Project Type
-- Web Application  
+- Web System  
 - Final Year Project (Completed)  
 - Group Project  
 
@@ -21,11 +21,10 @@ The system adopts a hybrid architecture where **PHP** is used for core business 
 **Backend & System**
 - PHP  
 - MySQL (phpMyAdmin)  
-- Composer  
 
 **AI / Machine Learning**
 - Python  
-- YOLO (Object Detection)  
+- YOLOv8 (Object Detection)  
 - Image Embedding & Similarity Matching  
 
 **Frontend**
@@ -46,15 +45,15 @@ My primary responsibilities focused on **backend development and AI-related modu
 
 - **Product Catalog Management**
   - Product data handling
-  - Image-based product association
   - Category and image processing logic
+  - Product recommendation
 
 - **Promotion Management**
   - Campaign and promotion logic
   - Discount application and validation rules
 
 - **Reward Points System**
-  - Points accumulation logic
+  - Points accumulation and tier-based logic
   - Reward calculation and redemption flow
 
 - **System Security**
@@ -64,7 +63,7 @@ My primary responsibilities focused on **backend development and AI-related modu
 
 ---
 
-## System Architecture (High-Level)
+## System Architecture
 - **PHP Backend**
   - Handles authentication, product management, promotions, rewards, and order-related logic
 - **Python AI Services**
@@ -92,13 +91,16 @@ security/              # Authentication & security handling
 user/                  # User-side logic  
 
 YOLO/                  # Object detection module  
-category_embeddings/   # Image embedding data  
+category_embeddings/   # Pre-generated product image embeddings    
 data_preprocess/       # Data preprocessing scripts  
-search/                # Visual search logic  
+search/                # Visual and keyword search logic  
 
-assets/                # UI demo assets (limited)  
-uploads/               # Demo product images only  
+assets/                # Frontend static assets (CSS and JavaScript)  
+img/                   # Visual search reference images
+img_category/          # Per-product representative images for search comparison  
+uploads/               # Mixed user and system-uploaded images (demo only) 
 
-index.php              # Application entry point  
-app.py                 # Python AI service entry
+index.php              # PHP application entry point  
+app.py                 # Python AI service entry script
+
 
