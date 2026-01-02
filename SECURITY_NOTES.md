@@ -75,7 +75,7 @@ The following are intentionally excluded from this public repository:
 - Sensitive content folders are removed.
 - A `README.md` is used within media folders to clarify intended usage.
 
-## External Communication Services
+### External Communication Services
 Email and SMS services are integrated using third-party providers.
 - SMTP and SMS credentials are not committed to the repository
 - Secrets are managed outside of version control
@@ -110,4 +110,5 @@ Security in this project is implemented through:
 - repository-level protection of secrets and private files
 
 These controls collectively reduce common web security risks and support safe system operation in an e-commerce context.
+
 
