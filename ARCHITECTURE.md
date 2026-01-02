@@ -36,34 +36,37 @@ management tasks.
 
 ### Key Components
 - admin/ – Admin-side management features
-- user/ – User-facing features and interactions
+- user/ – User-side features and interactions
 - security/ – Authentication, authorization, and validation logic
 - index.php – Application entry point
 - config.php – Database connection and system configuration (credentials excluded)
 
-The PHP layer acts as the system controller, coordinating user actions and
-request flow.
+The PHP layer acts as the system controller, coordinating user actions and request flow.
 
 ---
 
 ## 2. AI Processing Layer (Python)
-The AI layer enhances the system with visual-based product search.
+The AI layer supports **visual-based product search and similarity comparison** through inference and feature processing.
+
+Model training is performed separately using Google Colab. This repository
+focuses on **AI integration, inference workflow, and search logic**, rather than model training.
 
 ### Responsibilities
-- Object detection using YOLO
+- Object detection inference using a pre-trained YOLO model
 - Image preprocessing and feature extraction
-- Image embedding generation
-- Similarity-based product matching
+- Image embedding generation for similarity comparison
+- Similarity-based product matching and result ranking
 
 ### Key Components
-- YOLO/ – Object detection model and related scripts
+- YOLO/ – YOLO inference-related scripts and directory structure
 - data_preprocess/ – Image preprocessing utilities
-- category_embeddings/ – Pre-generated image embeddings
+- category_embeddings/ – Pre-generated image embeddings used for comparison
 - search/ – Similarity matching and visual search logic
-- app.py – AI service entry script
+- app.py – AI service entry script for inference and search handling
 
-This layer is designed to be decoupled from the PHP backend, allowing AI models
-to be updated or replaced without impacting core system functionality.
+This layer is designed to be **decoupled from the PHP backend**, allowing AI
+models or inference logic to be updated independently without impacting core
+system functionality.
 
 ---
 
@@ -78,29 +81,29 @@ The MySQL database stores structured system data, including:
 
 Database access is handled exclusively through the PHP backend using PDO.
 
-### Media Assets
-- uploads/ – Limited demo product images for UI presentation
-- assets/ – UI-related assets such as banners and demo visuals
-- img/ and img_category/ – Demo-only images for catalog and AI showcase
+### Media and Frontend Assets
+- uploads/ – Limited demo product images and user-uploaded media for UI presentation
+- assets/ – Frontend static assets, including CSS and JavaScript files
+- img/ and img_category/ – Demo-only images used for catalog reference and AI visual search showcase
 
-Demo media is intentionally limited to avoid repository bloat and privacy risks.
+Demo media content is intentionally limited to avoid repository bloat and to
+reduce privacy and data exposure risks.
 
 ---
 
 ## Visual Search Workflow
 1. A product image is uploaded or selected by the user
-2. The image is processed by the YOLO model to identify key objects
+2. The image is processed by the YOLO model to identify key objects and category
 3. Extracted features are converted into embeddings
 4. Similarity comparison is performed against stored product embeddings
 5. Matching products are returned to the web application
 
-This workflow enables image-based product discovery, complementing traditional
-keyword search.
+This workflow enables image-based product discovery, complementing traditional keyword search.
 
 ---
 
 ## Security Considerations
-- Database credentials and secrets are excluded from the public repository
+- Database credentials are excluded from the public repository
 - Input validation is enforced at the backend level
 - Role-based access control is applied to admin and user modules
 - Error messages are generalized to avoid information leakage
@@ -112,13 +115,12 @@ Further security-related details are documented in SECURITY_NOTES.md.
 ## Design Rationale
 - Separation of concerns: PHP handles business logic; Python handles AI tasks
 - Scalability: AI components can be scaled independently
-- Maintainability: Clear module boundaries reduce system coupling
+- Maintainability: Clear module boundaries reduce system dependencies
 - Security awareness: Sensitive data is never committed to the repository
 
 ---
 
 ## Summary
 This architecture enables a robust and extensible e-commerce platform by
-combining a stable web backend with advanced AI capabilities. The modular design
-supports future enhancements such as improved recommendation models, additional
-AI services, or external integrations without major system restructuring.
+combining a stable web backend with AI capabilities. The modular design supports future enhancements such as improved recommendation models, additional AI services, or external integrations without major system restructuring.
+
