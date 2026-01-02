@@ -1,28 +1,29 @@
-\# Product Category Reference Images
+# Product Category Reference Images
 
 
 
-This directory contains \*\*one representative image per product\*\*, used for visual search comparison and result matching.
+This directory contains **one representative image per product**, used for visual search comparison and result matching.
 
 
 
-\## Purpose
+## Purpose
 
-\- Each product is represented by a single reference image
+- Each product is represented by a single reference image
 
-\- This design helps speed up similarity comparison
+- This design helps speed up similarity comparison
 
-\- It reduces redundant matches in visual search results
+- It reduces redundant matches in visual search results
 
 
 
-\## Notes
+## Notes
 
-\- Limiting one image per product improves search efficiency
+- Limiting one image per product improves search efficiency
 
-\- Duplicate or highly similar images may lead to repeated results
+- Duplicate or highly similar images may lead to repeated results
 
-\- This folder is kept minimal to optimize performance and clarity of output
+- This folder is kept minimal to optimize performance and clarity of output
+
 
 
 
