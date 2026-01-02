@@ -1,0 +1,697 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+html,
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.container-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 40px 20px;
+}
+
+.detail-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 900px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    justify-content: center;
+}
+
+/* Header Styling - Luxury Dark Theme */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 30px;
+    background: linear-gradient(to right, #000000, #0a1a40);
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo */
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ffffff;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: #4da6ff;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    list-style: none;
+}
+
+.navbar li a {
+    color: #d0e7ff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 14px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.navbar li a:hover {
+    background: rgba(77, 166, 255, 0.2);
+    color: #4da6ff;
+}
+
+/* Search Form */
+.search-form {
+    display: flex;
+    align-items: center;
+    background: #f0f8ff;
+    border-radius: 25px;
+    padding: 5px 15px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-form input {
+    border: none;
+    padding: 8px;
+    width: 180px;
+    outline: none;
+    border-radius: 20px;
+    font-size: 14px;
+    background: transparent;
+}
+
+.search-form button {
+    background: none;
+    border: none;
+    color: #0056b3;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    color: #007bff;
+}
+
+
+/* Product Listing Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px;
+}
+
+/* Product Card */
+.product-item {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.product-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.product-item h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #222;
+}
+
+.product-item p {
+    font-size: 16px;
+    color: #666;
+}
+
+.product-item .price {
+    font-size: 20px;
+    color: #d9534f;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-item .btn {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: #ff9800;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.product-item .btn:hover {
+    background-color: #e67e22;
+}
+
+/* Featured Products */
+.featured-product {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+}
+
+.featured-product .product-item {
+    text-align: center;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.featured-product .price {
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Video Section */
+.video-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    position: relative;
+    
+}
+
+.video-container {
+    position: relative; /* Ensures the video is positioned correctly */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.video-text h1 {
+    font-size: 36px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.overlay .btn,
+.video-text .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: transparent;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    border: 2px solid #fff; 
+    border-radius: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+}
+
+.overlay .btn:hover,
+.video-text .btn:hover {
+    background-color: #fff; 
+    color: #000; 
+}
+
+/* Footer */
+.site-footer {
+    background: linear-gradient(to right, #000000, #0a1a40);
+    /* Same as header */
+    color: #d0e7ff;
+    padding: 10px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.site-footer .footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.site-footer p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #d0e7ff;
+}
+
+/* Footer Link Styling */
+.footer-link-container {
+    margin-top: 20px;
+}
+
+.footer-link {
+    color: #d0e7ff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #4da6ff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .search-form {
+        margin: 10px auto;
+        width: 90%;
+    }
+
+    .product-grid {
+        padding: 20px;
+    }
+
+    .product-item {
+        width: 100%;
+    }
+}
+
+/* Hide Number Input Arrows */
+input[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+    -webkit-appearance: none;
+}
+
+/* Search Results Grid */
+.search-container {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.search-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* Search Product Card */
+.product-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-image {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    background: #000000;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    margin-top: 5px;
+    transition: background-color .3s ease, color .3s ease;
+}
+
+.btn:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Container */
+.container {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Search Results */
+.search-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Ensure product container is centered and has a fixed max-width */
+.product-card {
+    max-width: 600px;
+    /* Adjust as needed */
+    margin: 20px auto;
+    /* Center it */
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Center and limit text width */
+.product-card .product-description {
+    max-width: 500px;
+    /* Adjust width as needed */
+    margin: 0 auto;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Ensure product image is properly scaled */
+.product-card img {
+    max-width: 250px;
+    /* Ensures it doesn’t get too large */
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+/* Style for the 'View Details' button */
+.product-card .view-details-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.product-card .view-details-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Product Info */
+.product-info h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.product-info p {
+    font-size: 14px;
+    color: #666;
+}
+
+.price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #e67e22;
+    margin-top: 5px;
+}
+
+/* Profile picture styles */
+.user-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.profile-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #9dcaf7;
+    transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1);
+}
+
+/* Dropdown menu */
+.profile-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    background: linear-gradient(to right, #000000, #0a1a40);
+    /* Match header/footer gradient */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    width: 170px;
+    z-index: 100;
+    text-align: left;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease;
+    transform: translateY(-10px);
+    padding: 8px 0;
+}
+
+/* Show menu when hovered */
+.profile-container:hover .profile-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Profile Menu Links */
+.profile-menu a {
+    display: block;
+    padding: 12px 20px;
+    color: #d0e7ff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+
+.profile-menu a:hover {
+    background: rgba(77, 166, 255, 0.2);
+    color: #4da6ff;
+}
+
+
+/* Register & Login Link Styles */
+/* Make Register/Login look like navbar links */
+.user-section .nav-link {
+    color: #d0e7ff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 14px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.user-section .nav-link:hover {
+    background: rgba(77, 166, 255, 0.2);
+    color: #4da6ff;
+}
+
+/* place this alongside your other header rules */
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: #222;
+}
+
+.header .logo {
+    font-size: 1.5em;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* … your existing nav + search styles … */
+
+.header-actions {
+    margin-left: auto;
+    /* push these to the right */
+    display: flex;
+    gap: 1rem;
+}
+
+.action-link {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95em;
+    transition: color 0.2s ease;
+}
+
+.action-link:hover {
+    color: #f1c40f;
+    /* match your hover color */
+}
+
+.action-link .icon {
+    margin-right: 0.4em;
+    font-size: 1.2em;
+}
+
+/* Contact/About Titles */
+.page-title {
+    font-size: 36px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Contact/About Content */
+.page-content {
+    font-size: 16px;
+    line-height: 1.8;
+    text-align: center;
+    color: #0a1a40;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 60px 20px;
+    color: #d0e7ff;
+}
+
+/* Grid layout */
+.contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+/* Left info */
+.contact-info {
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #0a1a40;
+}
+
+/* Make links inside info nice */
+.contact-info a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+
+/* Map Embed Styling */
+.map-embed {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.map-embed iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}

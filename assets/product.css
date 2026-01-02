@@ -1,0 +1,229 @@
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .catalog {
+    padding: 16px 0 40px;
+    background: #f6f7f9;
+  }
+
+  .catalog-title {
+    text-align: center;
+    margin: 0 0 14px;
+  }
+
+  .catalog-wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  .catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 70px 52px;
+    margin: 30px;
+    justify-content: center;
+  }
+
+  @media (max-width:1200px) {
+    .catalog-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width:900px) {
+    .catalog-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width:560px) {
+    .catalog-grid {
+      grid-template-columns: 1fr;
+      justify-content: center;
+    }
+  }
+
+  .catalog-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+    /* for heart positioning */
+  }
+
+  .catalog-card {
+    width: 100%;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .06);
+    transition: transform .18s ease, box-shadow .18s ease;
+    display: block;
+    padding: 18px;
+  }
+
+  .catalog-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .08);
+  }
+
+  .catalog-img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    display: block;
+  }
+
+  .catalog-name {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 16px 0 8px;
+    text-align: center;
+    color: #111;
+  }
+
+  .catalog-name a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .catalog-price {
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    margin: 0;
+  }
+
+  /* --- campaign price styling --- */
+  .catalog-price-block {
+    text-align: center;
+    margin-top: 2px;
+  }
+
+  .catalog-price-original {
+    font-size: 12px;
+    color: #9ca3af;
+    text-decoration: line-through;
+    margin-bottom: 2px;
+  }
+
+  .catalog-price-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: center;
+  }
+
+  .catalog-price-discount {
+    font-weight: 700;
+    font-size: 16px;
+    color: #cb5151ff;
+    /* elegant red, not too neon */
+  }
+
+  .catalog-price-pill {
+    font-size: 10px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    padding: 3px 7px;
+    border-radius: 5px;
+    background: transparent;
+    color: #cb5151ff;
+    border: 1px solid #cb5151ff;
+  }
+
+  /* --- color dots under price --- */
+  .color-dots {
+    margin-top: 6px;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .color-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    display: inline-block;
+  }
+
+  .empty {
+    text-align: center;
+    color: #555;
+    margin: 24px 0 10px;
+  }
+
+  /* --- wishlist heart on product card --- */
+  .catalog-heart {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    z-index: 3;
+    border: none;
+    background: transparent;
+    padding: 4px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .catalog-heart .wishlist-icon {
+    font-size: 22px;
+    /* similar to LV example */
+    line-height: 1;
+  }
+
+  /* --- stock badges on product card --- */
+  .catalog-item {
+    position: relative;
+    /* needed so badge sits in corner of each card */
+  }
+
+  .stock-badge {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    z-index: 2;
+    padding: 3px 9px;
+    border-radius: 999px;
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .stock-badge-low {
+    background: rgba(255, 248, 235, 0.97);
+    /* soft champagne */
+    color: #a16207;
+    /* warm gold-brown */
+    border: 1px solid rgba(161, 98, 7, 0.35);
+  }
+
+  .stock-badge-out {
+    background: rgba(243, 244, 246, 0.98);
+    /* soft grey */
+    color: #4b5563;
+    border: 1px solid rgba(107, 114, 128, 0.4);
+  }
+
+  /* Sold-out card: greyed and not clickable */
+  .catalog-item.sold-out .catalog-card,
+  .catalog-item.sold-out .catalog-name,
+  .catalog-item.sold-out .catalog-price,
+  .catalog-item.sold-out .catalog-price-block {
+    opacity: 0.45;
+  }
+
+  .catalog-item.sold-out .catalog-card {
+    pointer-events: none;
+    /* cannot click to product_detail.php */
+    cursor: default;
+  }

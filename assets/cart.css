@@ -1,0 +1,558 @@
+/* Full-bleed white background */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  color: #333;
+  background: #fff;
+  /* all white */
+}
+
+/* Full screen container */
+.cart-fullbleed {
+  width: 100%;
+  min-height: calc(80vh - 70px);
+  /* adjust if header height differs */
+  background: #fff;
+}
+
+
+/* Two-column layout, but capped to fit screen */
+.cart-layout {
+  max-width: 1900px;
+  /* ✅ prevents exceeding screen */
+  margin: 0 auto;
+  /* ✅ centers the grid */
+  padding: 24px;
+  /* balanced spacing */
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+}
+
+/* LEFT SIDE: add container */
+/* Background area only behind the left container */
+.cart-left-wrapper {
+  background: #f4f4f4;
+  /* the gray color you pointed at */
+  padding: 24px;
+  /* spacing around the container */
+}
+
+.cart-left {
+  background: #fff;
+  /* white card inside */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 20px 24px;
+}
+
+.cart-left-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.cart-left h2 {
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.continue-link {
+  color: #111;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.continue-link:hover {
+  text-decoration: underline;
+  border: 2px solid #000;
+}
+
+.flash-info {
+  background: #ecfeff;
+  border: 1px solid #a5f3fc;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin: 12px 0;
+}
+
+/* Search */
+.cart-search {
+  display: flex;
+  justify-content: flex-start;
+  margin: 8px 0 16px;
+}
+
+.cart-search input {
+  width: 320px;
+  max-width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 24px;
+  outline: none;
+}
+
+/* Table */
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cart-table thead {
+  background: #f8f8f8;
+  color: #111;
+}
+
+.cart-table th,
+.cart-table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.qty-cell {
+  white-space: nowrap;
+}
+
+.cart-bottom-actions {
+  margin-top: 12px;
+}
+
+/* RIGHT SIDE: NAKED SUMMARY (no card, no shadow, blends with page) */
+.cart-right {
+  position: sticky;
+  top: 24px;
+  align-self: start;
+  padding-top: 6px;
+  background: transparent;
+  /* sits on white page */
+}
+
+.naked-summary .sum-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.naked-summary .sum-div {
+  border: 0;
+  height: 1px;
+  background: #eaeaea;
+  margin: 8px 0;
+}
+
+.naked-summary .sum-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 10px 0 14px;
+}
+
+/* Checkout button — big rounded black */
+.checkout-btn {
+  width: 100%;
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #000;
+  color: #fff;
+  border: 2px solid #000;
+  margin: 6px 0 14px;
+  transition: transform .05s ease, opacity .2s ease;
+}
+
+.checkout-btn:hover {
+  opacity: .9;
+}
+
+.checkout-btn:active {
+  transform: scale(.99);
+}
+
+/* Rewards shown inline on the right */
+/* Points Redemption box */
+.reward-inline {
+  width: 100%;
+  /* match checkout button width */
+  border: 1px solid #ccc;
+  /* border around the box */
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  /* center alignment */
+  margin: 12px 0 12px;
+  box-sizing: border-box;
+}
+
+.reward-inline h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  margin-top: 10px;
+}
+
+.reward-inline p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.reward-form {
+  display: flex;
+  justify-content: center;
+  /* center input+button */
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.reward-form input[type="number"] {
+  width: 80px;
+  padding: 6px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.reward-preview {
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+
+/* Simple info list (no boxes) */
+.sum-info {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.sum-info li>strong {
+  font-size: 14px;
+  display: block;
+}
+
+.sum-info li>div {
+  font-size: 12px;
+  color: #555;
+}
+
+/* Buttons (shared) */
+button,
+#remove-item,
+#clear-cart,
+#btn-primary {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: transparent;
+  color: #000;
+  text-decoration: none;
+  font-size: 14px;
+  border: 2px solid #000;
+  border-radius: 30px;
+  transition: background-color .3s ease, color .3s ease;
+  text-align: center;
+  cursor: pointer;
+}
+
+button:hover,
+#remove-item:hover,
+#clear-cart:hover,
+#btn-primary:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Quantity buttons */
+.qty-btn {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+/* Empty state */
+.empty-box {
+  text-align: center;
+  padding: 24px 8px;
+}
+
+/* Responsive: stack columns */
+@media (max-width: 992px) {
+  .cart-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px 16px;
+  }
+
+  .cart-right {
+    position: static;
+  }
+}
+
+/* ── Promotions (right column) ─────────────────────────── */
+.promo-wrapper {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  box-sizing: border-box;
+  margin: 12px 0 16px;
+}
+
+.promo-wrapper h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.promo-form {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.promo-form input[type="text"] {
+  width: 180px;
+  padding: 8px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  outline: none;
+}
+
+.promo-status {
+  text-align: center;
+  font-size: 13px;
+  color: #444;
+  min-height: 18px;
+}
+
+/* Targeted block */
+.promo-targeted {
+  margin-top: 10px;
+}
+
+.promo-meter-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.promo-pill {
+  border: 1px solid #111;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+.promo-meter {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: #eee;
+  overflow: hidden;
+}
+
+.promo-meter-fill {
+  height: 100%;
+  width: 0%;
+  background: #111;
+  transition: width .25s ease;
+}
+
+.promo-meter-text {
+  font-size: 13px;
+  text-align: center;
+  margin: 6px 0 4px;
+}
+
+.promo-savings {
+  font-size: 13px;
+  text-align: center;
+}
+
+.promo-best {
+  text-align: center;
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: #333333c3;
+  font-style: italic;
+}
+
+/* General style for discount numbers */
+.discount-amount {
+  font-weight: 600;
+  /* semi-bold for emphasis */
+  font-size: 14px;
+  /* slightly larger than text */
+  color: #0a1a40db;
+  /* darker for contrast */
+  margin-left: 4px;
+  /* breathing space after label */
+}
+
+/* Optional: add highlight color for better visibility */
+.promo-discount-amount {
+  font-weight: 700;
+  font-size: 14px;
+  color: #0a1a40db;
+}
+
+/* Keep labels lighter so numbers stand out */
+.discount-label {
+  font-size: 13px;
+  color: #555;
+}
+
+/* Left column background should be grey across the whole column,
+   while the right column stays white. We paint the grid's LEFT area
+   using a behind-the-content pseudo element. */
+.cart-layout {
+  position: relative;
+  z-index: 0;
+  /* allow the pseudo background to sit behind */
+}
+
+/* Paint the entire LEFT column background (2fr of 2fr+1fr) */
+.cart-layout::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  right: 35%;
+  /* left 2/3 = 2fr, right 1/3 = 1fr */
+  background: #f4f4f4;
+  /* your grey */
+  z-index: -1;
+  /* behind all content */
+  border-radius: 12px;
+  /* optional: soft edge like your mock */
+}
+
+/* Ensure the two column wrappers render above the background */
+.cart-left-wrapper,
+.cart-right {
+  position: relative;
+  z-index: 1;
+}
+
+/* Since the column background is now painted by ::before,
+   make the wrapper itself transparent (no extra grey box). */
+.cart-left-wrapper {
+  background: transparent !important;
+  padding: 19px;
+  /* keep the spacing you had */
+}
+
+/* Keep the actual product card white (this is the ONLY white on the left) */
+.cart-left {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 20px 24px;
+}
+
+/* Sticky footer for this page */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main.cart-fullbleed {
+  flex: 1 0 auto;
+}
+
+/* push footer down */
+footer,
+.site-footer {
+  margin-top: auto;
+}
+
+/* whichever your footer element/class is */
+
+.price-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.price-original {
+  font-size: 0.8rem;
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.price-discounted {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.campaign-time-left {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #b91c1c;
+  background: rgba(248, 113, 113, 0.08);
+  border: 1px solid rgba(220, 38, 38, 0.45);
+  box-shadow:
+    0 6px 16px rgba(248, 113, 113, 0.28),
+    0 0 0 1px rgba(248, 113, 113, 0.15);
+  white-space: nowrap;
+}
+
+.campaign-time-left::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #ef4444;
+  box-shadow: 0 0 0 4px rgba(248, 113, 113, 0.45);
+  margin-right: 8px;
+  animation: promo-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes promo-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  70% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}

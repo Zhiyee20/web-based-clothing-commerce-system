@@ -1,0 +1,465 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Admin Section */
+.admin-products {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.admin-products h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Button Styles */
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+#addProductBtn {
+    background-color: transparent;
+    color: #000;
+    transition: background-color .3s ease, color .3s ease;
+    border: 2px solid #000;
+    border-radius: 30px;
+    display: block;
+    margin: 10px auto;
+}
+
+#addProductBtn:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.editBtn {
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 30px;
+}
+
+.deleteBtn {
+    background: #ffffff;
+    color: #000000;
+    border: 2px solid #000;
+    border-radius: 30px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Product Image */
+td img {
+    width: 50px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    /* Adjust for smaller screens */
+    max-width: 500px;
+    /* Ensures modal does not stretch too wide */
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    /* Enables scrolling */
+    max-height: 90vh;
+    /* Prevents modal from exceeding viewport */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+#addUserModal .modal-content,
+#editUserModal .modal-content {
+    width: 70vw;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: red;
+}
+
+/* Form Styling */
+#addProductForm label,
+#editProductForm label,
+#addUserForm label,
+#editUserForm label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#addProductForm input,
+#addProductForm textarea,
+#editProductForm input,
+#editProductForm textarea,
+#addUserForm input,
+#addUserForm select,
+#editUserForm select,
+#editUserForm input {
+    width: 90%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Description Textarea */
+#addProductForm textarea,
+#editProductForm textarea {
+    width: 90%;
+    /* Ensures full width within the form */
+    max-width: 90%;
+    /* Prevents stretching beyond form */
+    height: 80px;
+    /* Fixed height */
+    resize: none;
+    /* Prevents resizing */
+    overflow: auto;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Ensure number inputs align properly */
+#addProductForm input[type="number"],
+#editProductForm input[type="number"] {
+    width: 90%;
+}
+
+/* Add Product Button in Modal */
+.modal-content button {
+    width: 90%;
+    padding: 10px;
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #000;
+    border-radius: 30px;
+    margin-top: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .modal {
+        width: 95%;
+    }
+
+    .modal-content {
+        padding: 15px;
+    }
+}
+
+.search-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.search-form input,
+.search-form select {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.search-form select {
+    background-color: #fff;
+}
+
+.search-btn {
+    background-color: #ffffff;
+    color: #000;
+    border: 2px solid #000;
+    border-radius: 30px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.search-btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.reset-btn {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 15px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.reset-btn:hover {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #000;
+}
+
+/* Hide number input arrows in WebKit browsers (Chrome, Safari, Edge) */
+input[type="number"] {
+    appearance: textfield;
+    /* Standard property for compatibility */
+    -moz-appearance: textfield;
+    /* Firefox */
+    -webkit-appearance: none;
+    /* Chrome, Safari, Edge */
+}
+
+/* Hide number input arrows in WebKit browsers */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 5px;
+    border: 1px solid #333;
+    text-decoration: none;
+    color: #333;
+}
+
+.pagination a.active {
+    background-color: #333;
+    color: white;
+}
+
+
+/* this makes every table with .admin-table use the dark gradient header */
+.admin-table thead {
+    background: linear-gradient(90deg, #0d1b2a, #021024);
+}
+
+.admin-table thead th {
+    color: #fff;
+    border-color: #021024;
+}
+
+/* make <input type="color"> appear as a small round dot */
+.color-swatch-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.color-swatch-input {
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+/* remove default inner padding/border in some browsers */
+.color-swatch-input::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+.color-swatch-input::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+}
+
+.size-stock-wrapper {
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 6px;
+  background: #f8f9fc;
+}
+
+.size-title {
+  margin: 0 0 4px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.size-grid {
+  display: grid;
+  grid-template-columns: 60px repeat(5, minmax(0, 1fr));
+  gap: 4px;
+  align-items: center;
+  font-size: 12px;
+}
+
+.size-label {
+  font-weight: 600;
+}
+
+.size-header {
+  text-align: center;
+  font-weight: 600;
+}
+
+.size-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 4px 6px;
+  font-size: 12px;
+}
+
+.size-hint {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+  color: #777;
+}
+/* Only apply to Add Product + Edit Product modals */
+#addProductModal input[type="text"],
+#addProductModal input[type="number"],
+#addProductModal textarea,
+#addProductModal select,
+#editProductModal input[type="text"],
+#editProductModal input[type="number"],
+#editProductModal textarea,
+#editProductModal select {
+    width: 92%;
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+#addProductModal input[type="text"],
+#addProductModal input[type="number"],
+#addProductModal textarea,
+#addProductModal select,
+#editProductModal input[type="text"],
+#editProductModal input[type="number"],
+#editProductModal textarea,
+#editProductModal select,
+#addCategoryModal input[type="text"],
+#addCategoryModal select {
+  width: 100% !important;
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+/* Make the small 'Add' button compact */
+.btn-mini {
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: 6px;
+    line-height: 1;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Mini modal close button */
+.close-add-category {
+    position: absolute;
+    right: 12px;
+    top: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #444;
+}
+
+.close-add-category:hover {
+    color: #000;
+}
+/* mini Add button */
+.btn-mini {
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 6px;
+  line-height: 1;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 200px;
+}
+
+/* mini modal close button */
+.close-add-category {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #444;
+}
+
+.close-add-category:hover {
+  color: #000;
+}

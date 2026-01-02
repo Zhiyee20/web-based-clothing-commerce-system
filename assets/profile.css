@@ -1,0 +1,545 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.user_profile {
+    width: 60%; /* Make it wider */
+    max-width: 800px; /* Limit maximum width on large screens */
+    background-color: transparent;
+    padding: 20px;
+    box-shadow: none;
+    border:none;
+    text-align: center;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px; /* Space between avatar and Mr./Ms. */
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+}
+
+.avatar-container {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.avatar-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-info h2 {
+    font-size: 20px;
+    margin: 0;
+    color: #333;
+}
+
+.user-info p {
+    font-size: 14px;
+    margin: 4px 0 0;
+    color: #777;
+}
+
+
+.salutation {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0 0 20px 0; /* Add some space below the Mr./Ms. */
+    color: #333;
+}
+
+.menu-item {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    background-color: #fff;
+    transition: background-color 0.2s ease-in-out;
+    box-sizing: border-box;
+}
+
+.menu-item:hover {
+    background-color: #f5f5f5;
+}
+
+.menu-item .icon {
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+
+.menu-item .text {
+    flex-grow: 1;
+    text-align: left; /* Ensures text is left-aligned */
+}
+
+.menu-item .arrow {
+    font-weight: bold;
+    margin-left: auto; /* Push arrow to far right */
+    text-align: right;
+}
+/* Profile Page Layout Wrappers (aligned with shopping cart layout) */
+.container-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 1;
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+}
+
+.detail-container {
+    width: 100%;
+    max-width: 1100px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 30px 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Slide-in Animation for Section */
+.user-profile {
+    width: 100%;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideIn 0.6s forwards ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .container {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    input, select {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 95%;
+        margin: 20px auto;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    input, select {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#delete-account.menu-button.menu-delete {
+    width: 100% !important;
+    max-width: none !important;
+    border-radius: 10px !important;       /* same as .menu-button */
+    padding: 10px 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+}
+
+#delete-account:hover {
+    background-color: red;
+    color: white;
+}
+
+#delete-account:active {
+    background-color: #cc0000; /* Darker red */
+    transform: scale(0.95); /* Slightly shrink on click */
+}
+
+/* Reward Page Styles */
+body { 
+    font-family: Arial, sans-serif; 
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.points-section {
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: right;
+    font-weight: bold;
+}
+
+/* Tabs */
+.tabs {
+    
+    justify-content: space-around;
+    margin-top: 20px;
+    border-bottom: 2px solid #ddd;
+}
+
+.tab {
+    
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    color: gray;
+    position: relative;
+}
+
+.tab.active {
+    color: #8B5E3C;
+}
+
+.tab.active::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 4px;
+    background-color: #8B5E3C;
+}
+
+/* Voucher Layout */
+.voucher-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two vouchers per row */
+    gap: 30px; /* Increased space between vouchers */
+    justify-content: center;
+    margin-top: 25px;
+    padding: 15px;
+}
+
+/* Voucher Card */
+.voucher-card {
+    background: linear-gradient(to bottom, #fff, #f4e1c1);
+    width: 100%;
+    max-width: 280px; /* Set max width to keep balance */
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease-in-out;
+    margin: 0 auto; /* Ensures even spacing */
+}
+
+.voucher-card:hover {
+    transform: translateY(-5px);
+}
+
+.voucher-card h3 {
+    margin: 10px 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #c49a6c;
+}
+
+.voucher-card p {
+    margin: 5px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Use Button */
+.use-btn {
+    width: 100%;
+    padding: 12px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 15px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+}
+
+.use-btn:hover {
+    background: #218838;
+}
+
+/* No Voucher Message */
+.no-voucher {
+    margin-top: 25px;
+    font-size: 18px;
+    color: #999;
+}
+
+/*Address design*/
+/* Address Container */
+.address-container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Address List */
+.address-list {
+    list-style: none;
+    padding: 0;
+}
+
+.address-list li {
+    background: #f9f9f9;
+    border: 2px solid #ddd;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    transition: border-color 0.3s;
+    font-size: 18px;
+    min-height: 120px;
+}
+
+/* Highlight Default Address */
+.address-list li.default {
+    border-color: red;
+} 
+
+/* Address Details */
+.address-details {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Buttons */
+.actions {
+    margin-top: 15px;
+}
+
+.actions button {
+    padding: 12px 18px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+/* Edit and Delete Buttons */
+.edit-btn {
+    background: #007bff;
+    color: white;
+}
+
+.delete-btn {
+    background: #dc3545;
+    color: white;
+}
+
+/* Set as Default Button */
+.set-default-btn {
+    background: white; /* Default White */
+    color: black;
+    border: 2px solid black;
+}
+
+.set-default-btn.default {
+    background: red;
+    color: white;
+    border: 2px solid red;
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 768px) {
+    .address-container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .address-list li {
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    .actions button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .address-container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .address-list li {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .actions button {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+
+/*Edit Address Design*/
+.address-form-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Form Styles */
+/*form {
+    
+    flex-direction: column;
+    gap: 15px;
+}*/
+
+label {
+    font-weight: bold;
+    text-align: left;
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Map Styles */
+#map {
+    width: 100%;
+    height: 350px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .address-form-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    input[type="text"] {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+

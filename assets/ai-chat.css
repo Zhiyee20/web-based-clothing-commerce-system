@@ -1,0 +1,235 @@
+/* ====== AI Chat Widget (scoped) ====== */
+/* Container is injected into:  <div id="ai-chat" class="chatbox"></div> */
+#ai-chat {
+  /* nothing here so it won't affect layout until JS injects UI */
+  all: initial;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* Use a local scope so we don't clash with site CSS */
+#ai-chat .ai-root {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 9999;
+  font-family: inherit;
+  color: #0f172a; /* slate-900 */
+}
+
+/* Floating button */
+#ai-chat .ai-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 14px;
+  font-weight: 700;
+  cursor: pointer;
+  background: linear-gradient(135deg, #0a1a40, #004a99);
+  color: #d0e7ff;
+  box-shadow: 0 10px 28px rgba(2, 6, 23, 0.25);
+  transition: transform .12s ease, box-shadow .2s ease, filter .2s ease;
+}
+
+#ai-chat .ai-toggle:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+  box-shadow: 0 14px 36px rgba(2, 6, 23, 0.3);
+}
+
+#ai-chat .ai-badge {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #fff; /* green-500 */
+  color: #052e16;       /* green-950 */
+}
+
+/* Panel wrapper */
+#ai-chat .ai-panel {
+  position: fixed;
+  right: 18px;
+  bottom: 78px; /* leaves space for toggle */
+  width: min(380px, 92vw);
+  height: 60vh;
+  max-height: 640px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 48px rgba(2, 6, 23, 0.30);
+  border: 1px solid rgba(2, 6, 23, 0.06);
+  overflow: hidden;
+  display: none; /* JS toggles to block */
+  animation: ai-pop .16s ease-out;
+}
+
+@keyframes ai-pop {
+  from { transform: translateY(6px) scale(.98); opacity: 0; }
+  to   { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* Header */
+#ai-chat .ai-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 14px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #000000, #0a1a40);
+  color: #d0e7ff;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+#ai-chat .ai-head .ai-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+#ai-chat .ai-head .ai-close {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font-size: 18px;
+  cursor: pointer;
+  opacity: .85;
+}
+#ai-chat .ai-head .ai-close:hover { opacity: 1; }
+
+/* Messages area */
+#ai-chat .ai-body {
+  padding: 12px;
+  height: calc(60vh - 56px - 64px); /* total - head - input */
+  overflow: auto;
+  background:
+    radial-gradient(1200px 1200px at 110% 110%, #e6f0ff 0%, transparent 40%) no-repeat,
+    radial-gradient(800px 800px at -10% -10%, #f4f8ff 0%, transparent 45%) no-repeat,
+    #ffffff;
+}
+
+#ai-chat .ai-msg {
+  display: flex;
+  margin: 8px 0;
+}
+#ai-chat .ai-msg.me { justify-content: flex-end; }
+#ai-chat .ai-msg .ai-bubble {
+  max-width: 78%;
+  padding: 10px 12px;
+  line-height: 1.35;
+  border-radius: 12px;
+  font-size: 14px;
+  border: 1px solid rgba(2,6,23,0.06);
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+#ai-chat .ai-msg.me .ai-bubble {
+  background: #e8f0ff;
+}
+#ai-chat .ai-msg.bot .ai-bubble {
+  background: #f6f7f9;
+}
+
+/* Input bar */
+#ai-chat .ai-input {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  padding: 10px;
+  border-top: 1px solid rgba(2, 6, 23, 0.08);
+  background: #ffffff;
+}
+
+#ai-chat .ai-input input[type="text"],
+#ai-chat .ai-input input[type="search"],
+#ai-chat .ai-input input[type="email"],
+#ai-chat .ai-input input[type="tel"] {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+#ai-chat .ai-input input:focus {
+  border-color: #93c5fd;
+  box-shadow: 0 0 0 3px rgba(147, 197, 253, .35);
+}
+
+#ai-chat .ai-input .ai-send {
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+  background: #111827;
+  color: #ffffff;
+  transition: transform .12s ease, filter .2s ease, box-shadow .2s ease;
+  box-shadow: 0 8px 20px rgba(2, 6, 23, 0.18);
+}
+#ai-chat .ai-input .ai-send:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+/* Subtle typing indicator (optional) */
+#ai-chat .ai-typing {
+  font-size: 12px;
+  color: #64748b;
+  padding: 0 12px 8px;
+}
+
+/* Utility: show/hide */
+#ai-chat .is-open { display: block; }
+
+/* Mobile tweaks */
+@media (max-width: 520px) {
+  #ai-chat .ai-panel {
+    right: 10px;
+    left: 10px;
+    width: auto;
+    height: 65vh;
+    bottom: 84px;
+  }
+  #ai-chat .ai-head { padding: 12px; }
+  #ai-chat .ai-body { padding: 10px; }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  #ai-chat .ai-root { color: #e5e7eb; }
+  #ai-chat .ai-panel {
+    background: #0b1220;
+    border-color: rgba(255,255,255,0.06);
+    box-shadow: 0 20px 48px rgba(0,0,0,.6);
+  }
+  #ai-chat .ai-head {
+    background: linear-gradient(90deg, #0b1220, #0a1a40);
+    color: #cfe3ff;
+    border-bottom-color: rgba(255,255,255,.08);
+  }
+  #ai-chat .ai-body {
+    background:
+      radial-gradient(1200px 1200px at 110% 110%, rgba(0,118,255,.12), transparent 40%) no-repeat,
+      radial-gradient(800px 800px at -10% -10%, rgba(0,118,255,.08), transparent 45%) no-repeat,
+      #0b1220;
+  }
+  #ai-chat .ai-msg .ai-bubble { border-color: rgba(255,255,255,.06); }
+  #ai-chat .ai-msg.me .ai-bubble { background: #0f1b33; color: #e5eefc; }
+  #ai-chat .ai-msg.bot .ai-bubble { background: #0e1526; color: #dfe7f6; }
+  #ai-chat .ai-input { background: #0b1220; border-top-color: rgba(255,255,255,.08); }
+  #ai-chat .ai-input input { background: #0e1628; border-color: #1f2a44; color: #e6edf8; }
+  #ai-chat .ai-input input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, .25);
+  }
+  #ai-chat .ai-input .ai-send { background: #101826; }
+}
+
+/* Accessibility */
+#ai-chat .sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; 
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
