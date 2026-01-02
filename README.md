@@ -85,7 +85,7 @@ A detailed architecture explanation is provided in `ARCHITECTURE.md`.
 ---
 
 ## Repository Structure (Simplified)
-
+```text
 admin/                 # Admin-related backend logic
 security/              # Authentication & security handling
 user/                  # User-side logic
@@ -102,4 +102,5 @@ uploads/               # Mixed user and system-uploaded images (demo only)
 
 index.php              # PHP application entry point
 app.py                 # Python AI service entry script
+```
 
