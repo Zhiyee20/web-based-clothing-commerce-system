@@ -3,7 +3,7 @@ _Final Year Project (FYP)_
 
 ## Overview
 This project is a **Web-Based Clothing Commerce System** developed as a Final Year Project.  
-The system aims to enhance the online shopping experience by integrating **core e-commerce functionalities** with **AI-powered visual search** and **intelligent promotion and reward mechanisms**.
+The system aims to enhance the online shopping experience by integrating **core e-commerce functionalities** with **AI-powered visual search** and **tailored promotion and reward mechanisms**.
 
 The system adopts a hybrid architecture where **PHP** is used for core business logic and system operations, while **Python-based AI modules** handle visual search and data processing tasks.
 
@@ -101,3 +101,4 @@ uploads/               # Demo product images only
 
 index.php              # Application entry point  
 app.py                 # Python AI service entry
+
