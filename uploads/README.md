@@ -1,4 +1,4 @@
-\# Uploads Directory
+# Uploads Directory
 
 
 
@@ -6,25 +6,26 @@ This directory stores images uploaded or managed by the system, including variou
 
 
 
-\## Contents
+## Contents
 
-\- User-uploaded images
+- User-uploaded images
 
-\- Product images
+- Product images
 
-\- Banner and hero section visuals
+- Banner and hero section visuals
 
-\- UI and decorative assets
+- UI and decorative assets
 
 
 
-\## Notes
+## Notes
 
-\- This folder may contain mixed image types by design
+- This folder may contain mixed image types by design
 
-\- Only a limited set of demo files is included in this repository
+- Only a limited set of demo files is included in this repository
 
-\- Private, sensitive, or large-volume user content is intentionally excluded
+- Private, sensitive, or large-volume user content is intentionally excluded
+
 
 
 
