@@ -23,14 +23,14 @@ function send_reset_email(string $toEmail, string $otp): bool
     $mail->isSMTP();
     $mail->Host       = 'smtp.gmail.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'leowzyee0711@gmail.com';      // Gmail that has app password
-    $mail->Password   = 'grjmmslqbfqspuxg';            // app password 
+    $mail->Username   = 'example@gmail.com';      // replace Gmail that has app password
+    $mail->Password   = 'app-password';           // replace app password 
     $mail->SMTPSecure = \PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port       = 587;
     $mail->CharSet    = 'UTF-8';
 
     // From and To
-    $mail->setFrom('leowzyee0711@gmail.com', 'Luxera Store Support');
+    $mail->setFrom('example@gmail.com', 'Luxera Store Support');
     $mail->addAddress($toEmail);
 
     // Email content – OTP instead of link
@@ -558,4 +558,5 @@ include '../user/header.php';
       submitBtn.textContent = 'Sending...';
     });
   });
+
 </script>
