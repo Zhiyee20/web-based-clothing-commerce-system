@@ -1,28 +1,29 @@
-\# Visual Search Reference Images
+# Visual Search Reference Images
 
 
 
-This directory contains images primarily used for \*\*visual search result reference and similarity matching\*\*.
+This directory contains images primarily used for **visual search result reference and similarity matching**.
 
 
 
-\## Purpose
+## Purpose
 
-\- Images in this folder are created to support visual search accuracy
+- Images in this folder are created to support visual search accuracy
 
-\- Only relevant and representative product images are included
+- Only relevant and representative product images are included
 
-\- Unrelated or decorative images are intentionally excluded
+- Unrelated or decorative images are intentionally excluded
 
 
 
-\## Notes
+## Notes
 
-\- Mixing unrelated images may negatively impact visual similarity accuracy
+- Mixing unrelated images may negatively impact visual similarity accuracy
 
-\- This folder is kept focused to avoid noise in visual search results
+- This folder is kept focused to avoid noise in visual search results
 
-\- Images are used for demonstration and system behavior validation
+- Images are used for demonstration and system behavior validation
+
 
 
 
