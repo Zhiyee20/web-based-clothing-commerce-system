@@ -86,21 +86,20 @@ A detailed architecture explanation is provided in `ARCHITECTURE.md`.
 
 ## Repository Structure (Simplified)
 
-admin/                 # Admin-related backend logic  
-security/              # Authentication & security handling  
-user/                  # User-side logic  
+admin/                 # Admin-related backend logic
+security/              # Authentication & security handling
+user/                  # User-side logic
 
-YOLO/                  # Object detection module  
-category_embeddings/   # Pre-generated product image embeddings    
-data_preprocess/       # Data preprocessing scripts  
-search/                # Visual and keyword search logic  
+YOLO/                  # Object detection module
+category_embeddings/   # Pre-generated product image embeddings
+data_preprocess/       # Data preprocessing scripts
+search/                # Visual and keyword search logic
 
-assets/                # Frontend static assets (CSS and JavaScript)  
+assets/                # Frontend static assets (CSS and JavaScript)
 img/                   # Visual search reference images
-img_category/          # Per-product representative images for search comparison  
-uploads/               # Mixed user and system-uploaded images (demo only) 
+img_category/          # Per-product representative images for search comparison
+uploads/               # Mixed user and system-uploaded images (demo only)
 
-index.php              # PHP application entry point  
+index.php              # PHP application entry point
 app.py                 # Python AI service entry script
-
 
